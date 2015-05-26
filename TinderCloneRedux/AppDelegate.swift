@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        Parse.setApplicationId("ml1xPXm0t2iUyOSuICSy2qXGUZfADgloUCpZJdl0", clientKey:"KF4OqMZZC2j4liQxNXGpUAZpeCOVDSILulJeIJ9V")
+//        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions?, block: nil)
+//        PFFacebookUtils.initializeFacebook()
+        
+        
+        
         return true
     }
 
