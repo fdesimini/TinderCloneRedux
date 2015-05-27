@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
+    var permissions = ["public_profile", "email", "user_friends"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,6 +28,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             loginView.center = self.view.center
             //Use the readPermissions or publishPermissions property of the FBSDKLoginButton to ask the 'User' permission to their data
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
+            // This line of code calls the delegates below - whichever one is true then gets shown in the LoginView
             loginView.delegate = self
         }
         
@@ -42,9 +46,21 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             //Handle cancellation
         } else {
             // If you ask for multiple permissions at once, you should check if specific permissions missing
-            if result.grantedPermissions.contains("email")
-            {
-                //Do work
+//            if result.grantedPermissions.contains("email")
+            
+            //Log in or create user
+            PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions){
+                (user:PFUser?, error:NSError?) -> Void in
+                if let parseUser = user {
+                    if parseUser.isNew {
+                        println("User signed up and logged in through Facebook!")
+                    } else {
+                        println("User logged in through Facebook!")
+                    }
+                } else {
+                     println("Uh oh. The user cancelled the Facebook login.")
+                }
+
             }
         }
         

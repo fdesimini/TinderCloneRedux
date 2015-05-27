@@ -24,16 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize Parse.
         Parse.setApplicationId("XWWDhbsrulastdxuwxfm02x9IIY5zHA7wLAkKRjH", clientKey:"t1bMatZ40heHLvGgjAeqnyJq5iZruVZ9VIiyi0x3")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
         //Facebook
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-    
-//        return true
-    }
+        }
 
     // Facebook - “OpenURL” method allows your app to open again after the user has validated their login credentials.
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String?,
+        annotation: AnyObject?) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application,
+            openURL: url,
+            sourceApplication: sourceApplication,
+            annotation: annotation)
     }
     
     
@@ -54,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
-        
+        FBSDKAppEvents.activateApp()
         
     }
 
