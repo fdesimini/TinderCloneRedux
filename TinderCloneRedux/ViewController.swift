@@ -48,21 +48,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             // If you ask for multiple permissions at once, you should check if specific permissions missing
 //            if result.grantedPermissions.contains("email")
             
-            //Log in or create user
-            PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions){
-                (user:PFUser?, error:NSError?) -> Void in
-                if let parseUser = user {
-                    if parseUser.isNew {
-                        println("User signed up and logged in through Facebook!")
-                    } else {
-                        println("User logged in through Facebook!")
-                    }
+            // Log In (create/update currentUser) with FBSDKAccessToken
+            PFFacebookUtils.logInInBackgroundWithAccessToken(result.token, block: {
+                (user: PFUser?, error: NSError?) -> Void in
+                if user != nil {
+                    println("User logged in through Facebook!")
                 } else {
-                     println("Uh oh. The user cancelled the Facebook login.")
+                    println("Uh oh. There was an error logging in.")
                 }
-
-            }
-            
+            })
             
         }
         if result.grantedPermissions.contains("email")
