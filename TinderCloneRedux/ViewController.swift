@@ -62,12 +62,18 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 }
 
             }
+            
+            
         }
-        
+        if result.grantedPermissions.contains("email")
+        {
+            // Do work
+        }
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         println("User logged Out")
+           PFUser.logOut()
     }
 
     
