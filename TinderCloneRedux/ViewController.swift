@@ -14,7 +14,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //check for existing token at load so the app doesn't switch to facebook
+         //check for existing token at load so the app doesn't switch to facebook
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             //User is already logged in - switch to a new view controller - create a MainVC
