@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
-    var permissions = ["public_profile", "email", "user_friends"]
+//    var permissions = ["public_profile", "email", "user_friends"]
     
     
     override func viewDidLoad() {
@@ -52,6 +52,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             PFFacebookUtils.logInInBackgroundWithAccessToken(result.token, block: {
                 (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
+                    //this is where I should have the user go to a new ViewController
+                    
                     println("User logged in through Facebook!")
                 } else {
                     println("Uh oh. There was an error logging in.")
@@ -59,10 +61,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             })
             
         }
-        if result.grantedPermissions.contains("email")
-        {
-            // Do work
-        }
+//        if result.grantedPermissions.contains("email")
+//        {
+//            // Do work
+//        }
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
