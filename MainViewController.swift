@@ -14,9 +14,17 @@ class MainViewController: UIViewController {
     var label:UILabel!
     var imageView:UIImageView!
     
+    var newColour = UIColor(red: 242/255, green: 238/255, blue: 135/255, alpha: 1.0)
+    
+//    // set background colour
+//    self.backgroundColor = newColour
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+   
+        // set background colour
+        self.view.backgroundColor = newColour
+        
         // Do any additional setup after loading the view.
         
         imageView = UIImageView(frame: CGRectMake(self.view.bounds.width / 2 - 100, self.view.bounds.height / 2 - 100, 200, 200))
