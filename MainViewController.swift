@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
         
         imageView = UIImageView(frame: CGRectMake(self.view.bounds.width / 2 - 100, self.view.bounds.height / 2 - 100, 200, 200))
@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
         // add a corner radius to our image
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
         imageView.clipsToBounds = true
+        imageView.backgroundColor = .blueColor()
         self.view.addSubview(imageView)
         
         //Gesture recognizer

@@ -14,9 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-    let navigationController = UINavigationController()
-
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,17 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //We need to find out if the current user is logged in or not and then send them to the main screen (SecondViewController for now) if they are
       
-        var currentUser = PFUser.currentUser()
-        if currentUser != nil {
+       
+        if let currentUser = PFUser.currentUser() {
             println("the user is currently logged in")
             
-            let secondViewController = self.storyBoard.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
-            
-            self.navigationController.pushViewController(secondViewController, animated: true)
-            
+            let mainVC = MainViewController()
+//            let nav = UINavigationController(rootViewController: secondViewController)
+            self.window?.rootViewController = mainVC
         } else {
             // Show the signup or login screen
             println("the user should be directed to the login screen")
+            let loginVC = ViewController()
+            self.window?.rootViewController = loginVC
         }
     
         
