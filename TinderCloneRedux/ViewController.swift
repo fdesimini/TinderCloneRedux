@@ -53,8 +53,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
                     //this is where I should have the user go to a new ViewController
-                    
                     println("User logged in through Facebook!")
+                                        
                 } else {
                     println("Uh oh. There was an error logging in.")
                 }

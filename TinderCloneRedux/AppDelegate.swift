@@ -13,18 +13,38 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    let navigationController = UINavigationController()
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        
+    
         //Parse
         Parse.enableLocalDatastore()
         // Initialize Parse.
         Parse.setApplicationId("XWWDhbsrulastdxuwxfm02x9IIY5zHA7wLAkKRjH", clientKey:"t1bMatZ40heHLvGgjAeqnyJq5iZruVZ9VIiyi0x3")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        //We need to find out if the current user is logged in or not and then send them to the main screen (SecondViewController for now) if they are
+      
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            println("the user is currently logged in")
+            
+            let secondViewController = self.storyBoard.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
+            
+            self.navigationController.pushViewController(secondViewController, animated: true)
+            
+        } else {
+            // Show the signup or login screen
+            println("the user should be directed to the login screen")
+        }
+    
+        
         
         //Facebook
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -41,8 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             annotation: annotation)
     }
     
-    
-    func applicationWillResignActive(application: UIApplication) {
+       func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }

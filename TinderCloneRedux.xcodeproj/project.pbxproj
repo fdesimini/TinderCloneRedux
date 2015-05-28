@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		393DF0751B166239000F4FD2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DF0741B166239000F4FD2 /* MainViewController.swift */; };
 		39778B0A1B14DDB8008F0E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39778B091B14DDB8008F0E53 /* AppDelegate.swift */; };
 		39778B0C1B14DDB8008F0E53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39778B0B1B14DDB8008F0E53 /* ViewController.swift */; };
 		39778B0F1B14DDB8008F0E53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39778B0D1B14DDB8008F0E53 /* Main.storyboard */; };
 		39778B111B14DDB8008F0E53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39778B101B14DDB8008F0E53 /* Images.xcassets */; };
 		39778B141B14DDB8008F0E53 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39778B121B14DDB8008F0E53 /* LaunchScreen.xib */; };
 		39778B201B14DDB8008F0E53 /* TinderCloneReduxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39778B1F1B14DDB8008F0E53 /* TinderCloneReduxTests.swift */; };
+		39DFF8181B16A2BB001120E6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DFF8171B16A2BB001120E6 /* SecondViewController.swift */; };
 		4B6DB5C540500B4DD176A783 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DE946E272410338880231 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		393DF0741B166239000F4FD2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
 		395D7EFA1B14F464007B2BCB /* TinderCloneRedux-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinderCloneRedux-Bridging-Header.h"; sourceTree = "<group>"; };
 		39778B041B14DDB8008F0E53 /* TinderCloneRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderCloneRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39778B081B14DDB8008F0E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		39778B191B14DDB8008F0E53 /* TinderCloneReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderCloneReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39778B1E1B14DDB8008F0E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39778B1F1B14DDB8008F0E53 /* TinderCloneReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCloneReduxTests.swift; sourceTree = "<group>"; };
+		39DFF8171B16A2BB001120E6 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		41275407D8D7B6FC6FC95EB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		843DE946E272410338880231 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07B23AD64A7F876210F8678 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 		39778B061B14DDB8008F0E53 /* TinderCloneRedux */ = {
 			isa = PBXGroup;
 			children = (
+				393DF0741B166239000F4FD2 /* MainViewController.swift */,
 				39778B091B14DDB8008F0E53 /* AppDelegate.swift */,
 				39778B0B1B14DDB8008F0E53 /* ViewController.swift */,
 				39778B0D1B14DDB8008F0E53 /* Main.storyboard */,
@@ -92,6 +97,7 @@
 				39778B121B14DDB8008F0E53 /* LaunchScreen.xib */,
 				39778B071B14DDB8008F0E53 /* Supporting Files */,
 				395D7EFA1B14F464007B2BCB /* TinderCloneRedux-Bridging-Header.h */,
+				39DFF8171B16A2BB001120E6 /* SecondViewController.swift */,
 			);
 			path = TinderCloneRedux;
 			sourceTree = "<group>";
@@ -274,6 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39DFF8181B16A2BB001120E6 /* SecondViewController.swift in Sources */,
+				393DF0751B166239000F4FD2 /* MainViewController.swift in Sources */,
 				39778B0C1B14DDB8008F0E53 /* ViewController.swift in Sources */,
 				39778B0A1B14DDB8008F0E53 /* AppDelegate.swift in Sources */,
 			);
